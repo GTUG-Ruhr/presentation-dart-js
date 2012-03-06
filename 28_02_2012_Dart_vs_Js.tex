@@ -1,0 +1,119 @@
+\documentclass[]{beamer}
+\usetheme{Singapore}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{ %
+	language=vbscript,
+	basicstyle=\scriptsize,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=2,
+	numbersep=5pt,
+	backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+%	frame=single,                   % adds a frame around the code
+	rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+	tabsize=2,                      % sets default tabsize to 2 spaces
+	captionpos=b,                   % sets the caption-position to bottom
+	breaklines=true,                % sets automatic line breaking
+	breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+	title=\lstname,                   % show the filename of files included with \lstinputlisting;
+        	                          % also try caption instead of title
+	keywordstyle=\color{blue},          % keyword style
+	commentstyle=\color{dkgreen},       % comment style
+	stringstyle=\color{mauve},         % string literal style
+}
+\lstset{ %
+	language=html,
+	basicstyle=\scriptsize,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=2,
+	numbersep=5pt,
+	backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+%	frame=single,                   % adds a frame around the code
+	rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+	tabsize=2,                      % sets default tabsize to 2 spaces
+	captionpos=b,                   % sets the caption-position to bottom
+	breaklines=true,                % sets automatic line breaking
+	breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+	title=\lstname,                   % show the filename of files included with \lstinputlisting;
+        	                          % also try caption instead of title
+	keywordstyle=\color{blue},          % keyword style
+	commentstyle=\color{dkgreen},       % comment style
+	stringstyle=\color{mauve},         % string literal style
+}
+\title{Dart Vs. Javascript}
+\author{Matthias Kluth}
+\date{\today}
+\logo{\includegraphics[scale=0.01]{gtug-huge-flat}}
+\begin{document}
+\frame{\titlepage}
+\frame{\frametitle{Table Of Contents}\tableofcontents}
+\section{What is Javascript?}
+\begin{frame}
+\frametitle{What is Javascript?}
+\begin{quote}
+JavaScript is a prototype-based scripting language that is dynamic, weakly typed and has first-class functions. It is a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles.
+\end{quote}
+- Wikipedia
+\end{frame}
+\section{What is Dart?}
+\begin{frame}
+\frametitle{What is Dart?}
+\begin{quote}
+Dart is intended to solve JavaScript's problems (which, according to a leaked memo, cannot be solved by evolving the language) while offering better performance, the ability "to be more easily tooled for large-scale projects" and better security features. Google will offer a cross compiler that compiles Dart to ECMAScript 3 on the fly, for compatibility with non-Dart browsers. There will also be a facility to convert typed Closure code to Dart. Google also plans to integrate a native VM into Chrome (there is a Chromium branch aiming to implement this) and encourage competitors to do the same with their browsers.
+\end{quote}
+- Wikipedia
+\end{frame}
+\section{Example - Hello, world JS}
+\begin{frame}
+\frametitle{Hello, world JS}
+\lstinputlisting[language=html]{hello-world-js/index.html}
+\end{frame}
+\begin{frame}
+\frametitle{Hello, world JS}
+\lstinputlisting[language=vbscript]{hello-world-js/js/hello.js}
+\end{frame}
+\section{Example - Hello, world Dart}
+\begin{frame}
+\frametitle{Hello, world Dart}
+\lstinputlisting[language=html]{hello-world-dart/index.html}
+\end{frame}
+\begin{frame}
+\frametitle{Hello, world Dart}
+\lstinputlisting[language=java]{hello-world-dart/dart/hello.dart}
+\end{frame}
+\section{Comparing}
+\begin{frame}
+\frametitle{Comparing HTML}
+\begin{minipage}[t]{.45\textwidth}
+\lstinputlisting[language=html]{hello-world-js/index.html}
+\end{minipage}
+\begin{minipage}[t]{.45\textwidth}
+\lstinputlisting[language=html]{hello-world-dart/index.html}
+\end{minipage}
+\end{frame}
+\begin{frame}
+\frametitle{Comparing scripts}
+\begin{minipage}[t]{.45\textwidth}
+	\lstinputlisting[language=vbscript]{hello-world-js/js/hello.js}
+\end{minipage}
+\begin{minipage}[t]{.45\textwidth}
+	\lstinputlisting[language=java]{hello-world-dart/dart/hello.dart}
+\end{minipage}
+\end{frame}
+\section{Warning}
+\begin{frame}
+\frametitle{\color{red}Warning! Dartium only!}
+At time of writing, pure Dart is only available in Dartium, a special Chromebuild. If you want to use it with other browsers, you have to compile it to Javascript. A compiler is included, but not yet optimized. Right now, a simple Hello, world example takes about 17000 lines when compiled to Javascript.
+\end{frame}
+\end{document}
